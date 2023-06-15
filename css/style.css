@@ -11,10 +11,9 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .container {
-  padding: 0 var(--mainPadding);
+  padding: 0 var(--mainPadding, 15px);
   margin: 0 auto;
 }
-
 @media (min-width: 762px) {
   .container {
     width: 750px;
@@ -39,30 +38,30 @@ body {
 }
 header {
   height: 60px;
-  background-color: var(--mainColor);
+  background-color: var(--mainColor, #231942);
   font-size: 20px;
-  color: var(--fontColor);
+  color: var(--fontColor, #cfbaf0);
 }
 
 .info-container {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--mainMargin);
-  margin-bottom: var(--mainMargin);
+  margin-top: var(--mainMargin, 25px);
+  margin-bottom: var(--mainMargin, 25px);
 }
 .info-container .info {
-  background-color: var(--mainColor);
-  padding: var(--mainPadding);
-  color: var(--fontColor);
+  background-color: var(--mainColor, #231942);
+  padding: var(--mainPadding, 15px);
+  color: var(--fontColor, #cfbaf0);
   border-radius: 35px;
   font-size: 16px;
 }
 .info-container .info h3:last-child {
-  background-color: var(--fontColor);
+  background-color: var(--fontColor, #cfbaf0);
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  color: var(--mainColor);
+  color: var(--mainColor, #231942);
   margin-left: 10px;
 }
 .game-box {
@@ -73,28 +72,28 @@ header {
   grid-template-rows: repeat(3, 1);
 }
 .game-box .box:not(.mole) {
-  border: 2px solid var(--mainColor);
+  border: 2px solid var(--mainColor, #231942);
 }
 .highest-box {
-  margin-top: var(--mainMargin);
+  margin-top: var(--mainMargin, 25px);
   display: flex;
   justify-content: space-around;
-  padding: var(--mainPadding);
-  color: var(--fontColor);
+  padding: var(--mainPadding, 15px);
+  color: var(--fontColor, #cfbaf0);
   background-color: #6930c3;
   border-radius: 20px;
 }
 .control {
-  margin-top: var(--mainMargin);
+  margin-top: var(--mainMargin, 25px);
   display: flex;
   padding: 10px;
   justify-content: space-evenly;
-  background-color: var(--fontColor);
+  background-color: var(--fontColor, #cfbaf0);
   border-radius: 20px;
 }
 .control button {
   background-color: #eee;
-  color: var(--mainColor);
+  color: var(--mainColor, #231942);
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -102,12 +101,12 @@ header {
   font-weight: bold;
 }
 footer {
-  margin-top: var(--mainMargin);
-  background-color: var(--mainColor);
+  margin-top: var(--mainMargin, 25px);
+  background-color: var(--mainColor, #231942);
   color: #eee;
 }
 footer h4 {
-  padding: 10px;
+  padding: var(--mainPadding, 15px);
 }
 footer h4 span {
   color: red;
