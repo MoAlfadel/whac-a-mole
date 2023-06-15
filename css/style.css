@@ -106,7 +106,6 @@ header {
 /*  */
 .border-rainbow,
 .mole {
-  cursor: pointer;
   --angle: 0deg;
   border: 2px solid;
   border-image: conic-gradient(
@@ -123,7 +122,9 @@ header {
 
   animation: 10s rotate linear infinite;
 }
-
+.mole {
+  cursor: pointer;
+}
 @keyframes rotate {
   to {
     --angle: 360deg;
