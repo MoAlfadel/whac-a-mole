@@ -85,14 +85,15 @@ header {
   background-color: #6930c3;
 }
 
-.control .container {
+.control {
   background-color: var(--fontColor);
   margin-top: var(--mainMargin);
   padding: var(--mainPadding);
+}
+.control .container {
   display: flex;
   justify-content: space-around;
 }
-
 .control button {
   background-color: #eee;
   color: var(--mainColor);
