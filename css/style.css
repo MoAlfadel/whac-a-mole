@@ -6,9 +6,10 @@ body {
   --mainPadding: 15px;
   text-transform: capitalize;
   --mainColor: #231942;
+  --secoundColor: #eee;
   --fontColor: #cfbaf0;
   --mainMargin: 25px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Tilt Prism", cursive, sans-serif;
 }
 .container {
   padding: 0 var(--mainPadding, 15px);
@@ -43,6 +44,14 @@ header {
   color: var(--fontColor, #cfbaf0);
 }
 
+main h2 {
+  margin-top: var(--mainMargin);
+  background-color: var(--fontColor);
+  padding: var(--mainPadding);
+  color: var(--mainColor);
+  border-radius: 30px;
+  text-align: center;
+}
 .info-container {
   display: flex;
   justify-content: space-between;
@@ -68,7 +77,7 @@ header {
   display: grid;
   min-height: 60vh;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #eee;
+  background-color: var(--secoundColor, #eee);
   grid-template-rows: repeat(3, 1);
 }
 .game-box .box:not(.mole) {
@@ -80,8 +89,47 @@ header {
   justify-content: space-around;
   padding: var(--mainPadding, 15px);
   color: var(--fontColor, #cfbaf0);
-  background-color: #6930c3;
+  background-color: #4f466e;
   border-radius: 20px;
+}
+.levels {
+  margin-top: var(--mainMargin, 25px);
+  color: var(--fontColor);
+}
+.levels h4 {
+  background-color: rgb(129, 111, 182);
+  color: var(--secoundColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding: var(--mainPadding);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.levels ul {
+  border-radius: 30px;
+  padding: var(--mainPadding);
+  display: flex;
+  background-color: rgb(129, 111, 182);
+  list-style-type: none;
+  justify-content: space-around;
+}
+.levels ul li {
+  background-color: var(--secoundColor, #eee);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.levels ul li a {
+  color: var(--mainColor);
+  text-decoration: none;
+}
+.levels ul li.active,
+.levels ul li:hover {
+  background-color: var(--mainColor, #231942);
+}
+.levels ul li.active a,
+.levels ul li:hover a {
+  color: var(--secoundColor, #eee);
 }
 .control {
   margin-top: var(--mainMargin, 25px);
@@ -92,7 +140,7 @@ header {
   border-radius: 20px;
 }
 .control button {
-  background-color: #eee;
+  background-color: var(--secoundColor, #eee);
   color: var(--mainColor, #231942);
   border-radius: 10px;
   border: none;
@@ -102,11 +150,11 @@ header {
 }
 footer {
   margin-top: var(--mainMargin, 25px);
-  background-color: var(--mainColor, #231942);
-  color: #eee;
+  padding: var(--mainPadding, 15px);
+  background-color: #eae5f8;
 }
 footer h4 {
-  padding: var(--mainPadding, 15px);
+  color: var(--mainColor);
 }
 footer h4 span {
   color: red;

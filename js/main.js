@@ -6,10 +6,12 @@ const newGame = document.getElementById("new");
 const clearHicstory = document.getElementById("clear");
 const positiveClickAudio = document.getElementById("positiveClickSound");
 const nagativeClickSound = document.getElementById("nagativeClickSound");
-let a;
+let activelevel = document.querySelector(".active").textContent.trim();
+let moveTime;
+
 let randomBox;
 let result = 0;
-let colors = [
+const colors = [
   "#2a9d8f",
   "#264653",
   "#e9c46a",
@@ -28,12 +30,20 @@ let colors = [
   "#03071e",
 ];
 
+if (activelevel === "one") {
+  moveTime = 400;
+} else if (activelevel === "two") {
+  moveTime = 250;
+} else if (activelevel === "three") {
+  moveTime = 160;
+}
+console.log(moveTime);
 //playing time
 let time = +timeLeft.innerText;
 
 let moveMole = window.setInterval(() => {
   setMoleToRandomBox();
-}, 400); //move mole every .6s
+}, moveTime); //move mole every .4s and set mole to random
 
 function setMoleToRandomBox() {
   boxes.forEach((box) => {
@@ -53,7 +63,7 @@ let countDown = window.setInterval(() => {
 //control the play (check if the time left )
 function controlPlay() {
   if (timeLeft.innerHTML == 0) {
-    clearInterval(countDown); //the time left
+    clearInterval(countDown); //the time left (stp count down )
     clearInterval(moveMole); // do not move mole
     boxes.forEach((box) => {
       box.classList.remove("mole"); //remove the mole style
@@ -83,23 +93,25 @@ boxes.forEach((box) => {
 
 //check the result if it > hightest
 setTimeout(() => {
-  if (!localStorage.highest) {
-    localStorage.highest = result;
-  } else if (result > localStorage.highest) {
-    localStorage.highest = result;
+  if (!localStorage[`${activelevel}`]) {
+    localStorage[`${activelevel}`] = result;
+  } else if (result > localStorage[`${activelevel}`]) {
+    localStorage[`${activelevel}`] = result;
   }
-  // update the highest score
-  highestDisplay.innerHTML = localStorage.highest;
+  // update the score
+  highestDisplay.innerHTML = localStorage[`${activelevel}`];
 }, time * 1000); // after the game end
-// display highest when open the page
+
+// display when open the page
 displayHightest();
+
 //display hightest score
 function displayHightest() {
-  highestDisplay.innerHTML = localStorage.highest || 0;
+  highestDisplay.innerHTML = localStorage[`${activelevel}`] || 0;
 }
 
 clearHicstory.addEventListener("click", () => {
-  localStorage.clear();
+  localStorage.removeItem(`${activelevel}`);
   displayHightest();
 });
 
