@@ -25,6 +25,16 @@
             <h3 id="timeLeft" class="center">30</h3>
           </div>
         </section>
+        <section class="audio">
+          <audio
+            id="positiveClickSound"
+            src="audio/mixkit-arcade-game-jump-coin-216.wav"
+          ></audio>
+          <audio
+            id="nagativeClickSound"
+            src="audio/mixkit-negative-tone-interface-tap-2569.wav"
+          ></audio>
+        </section>
         <section class="game-box border-rainbow">
           <div class="box" id="1"></div>
           <div class="box" id="2"></div>
@@ -37,17 +47,20 @@
           <div class="box" id="9"></div>
         </section>
         <section class="highest-box">
-          <div>heighest score</div>
+          <div>highest score</div>
           <div id="highestDisplay"></div>
         </section>
-      </div>
-      <section id="control" class="control">
-        <div class="container">
+        <section id="control" class="control">
           <button id="new">New Game</button>
           <button id="clear">Clear History</button>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
+    <footer class="center">
+      <div class="container">
+        <h4>made with <span>&#10084;</span> by Mo Alfadel</h4>
+      </div>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>

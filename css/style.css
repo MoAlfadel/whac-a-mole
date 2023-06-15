@@ -69,11 +69,11 @@ header {
   display: grid;
   min-height: 60vh;
   grid-template-columns: repeat(3, 1fr);
+  background-color: #eee;
   grid-template-rows: repeat(3, 1);
 }
 .game-box .box:not(.mole) {
   border: 2px solid var(--mainColor);
-  cursor: pointer;
 }
 .highest-box {
   margin-top: var(--mainMargin);
@@ -81,18 +81,16 @@ header {
   justify-content: space-around;
   padding: var(--mainPadding);
   color: var(--fontColor);
-  border-radius: 10px;
   background-color: #6930c3;
+  border-radius: 20px;
 }
-
 .control {
-  background-color: var(--fontColor);
   margin-top: var(--mainMargin);
-  padding: var(--mainPadding);
-}
-.control .container {
   display: flex;
-  justify-content: space-around;
+  padding: 10px;
+  justify-content: space-evenly;
+  background-color: var(--fontColor);
+  border-radius: 20px;
 }
 .control button {
   background-color: #eee;
@@ -103,7 +101,18 @@ header {
   padding: 10px;
   font-weight: bold;
 }
-
+footer {
+  margin-top: var(--mainMargin);
+  background-color: var(--mainColor);
+  color: #eee;
+}
+footer h4 {
+  padding: 10px;
+}
+footer h4 span {
+  color: red;
+  margin: 0 5px;
+}
 /*  */
 .border-rainbow,
 .mole {

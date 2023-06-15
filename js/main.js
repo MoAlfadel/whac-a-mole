@@ -4,6 +4,9 @@ const timeLeft = document.getElementById("timeLeft");
 const highestDisplay = document.getElementById("highestDisplay");
 const newGame = document.getElementById("new");
 const clearHicstory = document.getElementById("clear");
+const positiveClickAudio = document.getElementById("positiveClickSound");
+const nagativeClickSound = document.getElementById("nagativeClickSound");
+let a;
 let randomBox;
 let result = 0;
 let colors = [
@@ -69,8 +72,11 @@ function getRandomInt(min, max) {
 boxes.forEach((box) => {
   box.addEventListener("click", (e) => {
     if (e.target.id === randomBox.id) {
+      positiveClickAudio.play();
       result++;
       scoreDisplay.textContent = result;
+    } else {
+      nagativeClickSound.play();
     }
   });
 });
