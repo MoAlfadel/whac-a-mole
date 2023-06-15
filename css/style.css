@@ -88,13 +88,12 @@ main h2 {
   display: flex;
   justify-content: space-around;
   padding: var(--mainPadding, 15px);
-  color: var(--fontColor, #cfbaf0);
+  color: var(--secoundColor, #cfbaf0);
   background-color: #4f466e;
   border-radius: 20px;
 }
 .levels {
   margin-top: var(--mainMargin, 25px);
-  color: var(--fontColor);
 }
 .levels h4 {
   background-color: rgb(129, 111, 182);
@@ -155,6 +154,7 @@ footer {
 }
 footer h4 {
   color: var(--mainColor);
+  font-family: cursive, "Tilt Prism";
 }
 footer h4 span {
   color: red;
