@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  --mainPadding: 15px;
+  text-transform: capitalize;
+  --mainColor: #231942;
+  --fontColor: #cfbaf0;
+  --mainMargin: 25px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.container {
+  padding: 0 var(--mainPadding);
+  margin: 0 auto;
+}
+
+@media (min-width: 762px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header {
+  height: 60px;
+  background-color: var(--mainColor);
+  font-size: 20px;
+  color: var(--fontColor);
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--mainMargin);
+  margin-bottom: var(--mainMargin);
+}
+.info-container .info {
+  background-color: var(--mainColor);
+  padding: var(--mainPadding);
+  color: var(--fontColor);
+  border-radius: 35px;
+  font-size: 16px;
+}
+.info-container .info h3:last-child {
+  background-color: var(--fontColor);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--mainColor);
+  margin-left: 10px;
+}
+.game-box {
+  display: grid;
+  min-height: 60vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1);
+}
+.game-box .box:not(.mole) {
+  border: 2px solid var(--mainColor);
+  cursor: pointer;
+}
+.highest-box {
+  margin-top: var(--mainMargin);
+  display: flex;
+  justify-content: space-around;
+  padding: var(--mainPadding);
+  color: var(--fontColor);
+  border-radius: 10px;
+  background-color: #6930c3;
+}
+
+.control .container {
+  background-color: var(--fontColor);
+  margin-top: var(--mainMargin);
+  padding: var(--mainPadding);
+  display: flex;
+  justify-content: space-around;
+}
+
+.control button {
+  background-color: #eee;
+  color: var(--mainColor);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/*  */
+.border-rainbow,
+.mole {
+  cursor: pointer;
+  --angle: 0deg;
+  border: 2px solid;
+  border-image: conic-gradient(
+      from var(--angle),
+      red,
+      yellow,
+      lime,
+      aqua,
+      blue,
+      magenta,
+      red
+    )
+    1;
+
+  animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}

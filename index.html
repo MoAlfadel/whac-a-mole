@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Whac-A-Mole</title>
+  </head>
+  <body>
+    <header class="center">
+      <div class="container">
+        <h1>Whac-A-Mole</h1>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section class="info-container">
+          <div class="info center">
+            <h3>Your score</h3>
+            <h3 id="score" class="center">0</h3>
+          </div>
+          <div class="info center">
+            <h3>time left</h3>
+            <h3 id="timeLeft" class="center">10</h3>
+          </div>
+        </section>
+        <section class="game-box border-rainbow">
+          <div class="box" id="1"></div>
+          <div class="box" id="2"></div>
+          <div class="box" id="3"></div>
+          <div class="box" id="4"></div>
+          <div class="box" id="5"></div>
+          <div class="box" id="6"></div>
+          <div class="box" id="7"></div>
+          <div class="box" id="8"></div>
+          <div class="box" id="9"></div>
+        </section>
+        <section class="highest-box">
+          <div>heighest score</div>
+          <div id="highestDisplay"></div>
+        </section>
+      </div>
+      <section id="control" class="control">
+        <div class="container">
+          <button id="new">New Game</button>
+          <button id="clear">Clear History</button>
+        </div>
+      </section>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
